@@ -78,10 +78,10 @@
     <TextView
         android:id="@+id/reg_list"
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:textSize="20sp"
+        android:layout_height="180sp"
+        android:textSize="18sp"
         android:layout_marginTop="-220dp"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
         android:fadeScrollbars="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

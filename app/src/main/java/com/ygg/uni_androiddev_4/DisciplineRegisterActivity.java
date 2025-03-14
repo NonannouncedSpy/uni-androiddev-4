@@ -1,6 +1,7 @@
 package com.ygg.uni_androiddev_4;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,12 +18,12 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
         StringBuilder discListBuilder = new StringBuilder();
         int num = 1;
         for (Discipline dscp : registeredDisciplines) {
-            discListBuilder.append(num+1).append(". ")
+            discListBuilder.append(num).append(". ")
                     .append(dscp.getName()).append(" (")
                     .append("on ").append(dscp.getLessonDay())
                     .append(", at ").append(dscp.getTime())
                     .append(", taught by ").append(dscp.getTeacher())
-                    .append("\n");
+                    .append(")\n");
             num++;
         }
         String finalList = discListBuilder.toString();
@@ -45,5 +46,8 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
 
         final Button dataButton = findViewById(R.id.reg_button);
         dataButton.setOnClickListener(v -> addDisciplineData());
+
+        final TextView discListView = findViewById(R.id.reg_list);
+        discListView.setMovementMethod(new ScrollingMovementMethod());
     }
 }
