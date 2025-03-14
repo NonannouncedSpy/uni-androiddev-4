@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Larioware 4: Educatible Edition</string>
 
+    <string name="invalid_name">Invalid name! Should be \"FIRST LAST\"</string>
+
     <!-- MainActivity -->
     <string name="main_title"><u>Larioware 4</u></string>
     <string name="main_title2">Educatible Edition</string>
