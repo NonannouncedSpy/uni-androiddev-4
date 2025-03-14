@@ -8,9 +8,9 @@ public class Discipline {
 
     public Discipline(String name, String lessonDay, String time, String teacher) {
         this.name = name;
-        this.lessonDay = name;
-        this.time = name;
-        this.teacher = name;
+        this.lessonDay = lessonDay;
+        this.time = time;
+        this.teacher = teacher;
     }
 
     public String getName() {
