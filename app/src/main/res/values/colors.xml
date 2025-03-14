@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="purple">#FF9F00FF</color>
+    <color name="pale_purple">#FF5F4A7F</color>
     <color name="dark_purple">#FF2F004F</color>
     <color name="magenta">#FFFF00CF</color>
     <color name="dark_magenta">#FF3F002F</color>

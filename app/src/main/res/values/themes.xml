@@ -5,7 +5,7 @@
         <item name="android:textColor">@color/purple</item>
         <item name="android:editTextColor">@color/purple</item>
         <item name="android:background">@color/dark_purple</item>
-        <item name="android:textColorHint">@color/purple</item>
+        <item name="android:textColorHint">@color/pale_purple</item>
         <!-- Font stuff -->
         <item name="android:fontFamily">serif-monospace</item>
         <item name="android:textSize">20sp</item>
