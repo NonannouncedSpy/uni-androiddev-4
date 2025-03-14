@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Uni-androiddev-4</string>
+    <string name="app_name">Larioware 4: Educatible Edition</string>
+
+    <!-- MainActivity -->
+    <string name="main_title"><u>Larioware 4</u></string>
+    <string name="main_title2">Educatible Edition</string>
+    <string name="main_prompt">Enter your first and last name:</string>
+    <string name="main_hint"><i>e.g. "Lario Luisiario"</i></string>
+    <string name="main_button">Log in</string>
+
+    <!-- RegisterActivity -->
+
+    <!-- SpecificationsActivity -->
+
 </resources>
