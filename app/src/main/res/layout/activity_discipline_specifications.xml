@@ -93,7 +93,6 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:hint="@string/specs_hint_teacher"
-        android:inputType="time"
         android:layout_marginTop="-50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +116,6 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:hint="@string/specs_hint_comment"
-        android:inputType="time"
         android:layout_marginTop="110dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +123,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/main_button"
+        android:id="@+id/specs_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/specs_button"

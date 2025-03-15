@@ -45,6 +45,9 @@ public class Discipline implements Parcelable {
     public String getComment() {
         return comment;
     }
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     @Override
     public int describeContents() {
