@@ -5,12 +5,14 @@ public class Discipline {
     private String lessonDay;
     private String time;
     private String teacher;
+    private String comment;
 
-    public Discipline(String name, String lessonDay, String time, String teacher) {
+    public Discipline(String name, String lessonDay, String time, String teacher, String comment) {
         this.name = name;
         this.lessonDay = lessonDay;
         this.time = time;
         this.teacher = teacher;
+        this.comment = comment;
     }
 
     public String getName() {
@@ -24,5 +26,8 @@ public class Discipline {
     }
     public String getTeacher() {
         return teacher;
+    }
+    public String getComment() {
+        return comment;
     }
 }

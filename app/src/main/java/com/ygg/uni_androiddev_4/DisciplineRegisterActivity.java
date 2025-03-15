@@ -1,10 +1,19 @@
 package com.ygg.uni_androiddev_4;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -23,6 +32,7 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
                     .append("on ").append(dscp.getLessonDay())
                     .append(", at ").append(dscp.getTime())
                     .append(", taught by ").append(dscp.getTeacher())
+                    .append("; extra: ").append(dscp.getComment())
                     .append(")\n");
             num++;
         }
@@ -35,8 +45,38 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
 
     // button's function
     public void addDisciplineData() {
-        registeredDisciplines.add(new Discipline("QQ", "Monday", "69.69pm", "Ygg"));
-        refreshDisciplines();
+        // get text from edittext
+        final EditText addDiscipline = findViewById(R.id.reg_edit);
+        String discText = addDiscipline.getText().toString().trim();
+
+        // make sure its not completely empy
+        if (discText.isEmpty()) {
+            Toast badDisciplineToast = Toast.makeText(getApplicationContext(), R.string.bad_disc, Toast.LENGTH_SHORT);
+            badDisciplineToast.show();
+            return;
+        }
+
+        // register a callback to launch SpecsActivity for a result
+        ActivityResultLauncher<Intent> specsResCallback = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult res) {
+                        if (res.getResultCode() != Activity.RESULT_OK) { return; }
+
+                        Bundle data = res.getData().getExtras();
+                        Discipline newDiscipline = (Discipline) data.get("discipline");
+                        registeredDisciplines.add(newDiscipline);
+
+                        refreshDisciplines();
+                    }
+                }
+        );
+
+        // launch
+        Intent specsIntent = new Intent(getApplicationContext(), DisciplineSpecificationsActivity.class);
+        specsIntent.putExtra("disc name", discText);
+        specsResCallback.launch(specsIntent);
     }
 
     @Override
