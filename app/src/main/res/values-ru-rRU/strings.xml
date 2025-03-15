@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Larioware 4: Обучабельное Издание</string>
+
+    <!-- MainActivity -->
+    <string name="main_title"><u>Larioware 4</u></string>
+    <string name="main_title2">Обучабельное Издание</string>
+    <string name="main_prompt">Введите имя и фамилию:</string>
+    <string name="main_hint"><i>напр. \"Ларио Лариович\"</i></string>
+    <string name="main_button">Войти</string>
+    <string name="invalid_name">Неправильное имя! Должно быть \"ИМЯ ФАМ\"</string>
+
+    <!-- RegisterActivity -->
+    <string name="reg_title"><u>Регистрация Дисциплин</u></string>
+    <string name="reg_welcome">Добро пожаловать, </string>
+    <string name="reg_disciplines">Вы зарегестрированы на:</string>
+    <string name="reg_newdiscipline">Зарегистрироваться на:</string>
+    <string name="reg_hint">напр. \"ПиРМП\"</string>
+    <string name="reg_button">Ввести данные</string>
+    <string name="bad_disc">Пожалуйста введите название дисциплины</string>
+
+    <!-- SpecificationsActivity -->
+    <string name="specs_title"><u>Настройка Предпочтений</u></string>
+    <string name="specs_regfor">Регистрация на: <i>%1$s</i></string>
+    <string name="specs_day">Выберите день недели:</string>
+    <string-array name="specs_days">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+    </string-array>
+    <string name="specs_time">Выберите время:</string>
+    <string name="specs_hint_time"><i>напр. \"10:42\"</i></string>
+    <string name="specs_teacher">Выберите преподавателя:</string>
+    <string name="specs_hint_teacher"><i>напр. \"Дзержинский К.Ю.\"</i></string>
+    <string name="specs_comment">Доп. комментарии:</string>
+    <string name="specs_hint_comment"><i>напр. \"По н.ч. неделям\"</i></string>
+    <string name="specs_button">Завершить</string>
+    <string name="bad_disc_data">Пожалуйста заполните поля \"день\", \"время\" и \"преподаватель\"</string>
+    <string name="bad_time">Неправильное время! Должно быть \"ЧЧ:ММ\"</string>
+    <string name="data_passed">Вы были успешно зарегестрированы</string>
+
+</resources>
