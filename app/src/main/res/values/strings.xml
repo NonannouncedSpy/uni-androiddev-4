@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">Larioware 4: Educatible Edition</string>
 
-    <string name="invalid_name">Invalid name! Should be \"FIRST LAST\"</string>
-
     <!-- MainActivity -->
     <string name="main_title"><u>Larioware 4</u></string>
     <string name="main_title2">Educatible Edition</string>
     <string name="main_prompt">Enter your first and last name:</string>
     <string name="main_hint"><i>e.g. \"Lario Luisiario\"</i></string>
     <string name="main_button">Log in</string>
+    <string name="invalid_name">Invalid name! Should be \"FIRST LAST\"</string>
 
     <!-- RegisterActivity -->
     <string name="reg_title"><u>Discipline Registration</u></string>
@@ -17,7 +16,27 @@
     <string name="reg_newdiscipline">Register for new:</string>
     <string name="reg_hint">e.g. \"Maths\"</string>
     <string name="reg_button">Add information</string>
+    <string name="bad_disc">Please enter at least SOMETHING</string>
 
     <!-- SpecificationsActivity -->
+    <string name="specs_title"><u>Preference Configuration</u></string>
+    <string name="specs_regfor">Registering for: <i>%1$s</i></string>
+    <string name="specs_day">Select day of week:</string>
+    <string-array name="specs_days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string name="specs_time">Select time:</string>
+    <string name="specs_hint_time"><i>e.g. \"10:30\"</i></string>
+    <string name="specs_teacher">Select teacher:</string>
+    <string name="specs_hint_teacher"><i>e.g. \"Ivan Robotowsky\"</i></string>
+    <string name="specs_comment">Extras:</string>
+    <string name="specs_hint_comment"><i>e.g. \"Every other week\"</i></string>
+    <string name="specs_button">Done</string>
 
 </resources>
