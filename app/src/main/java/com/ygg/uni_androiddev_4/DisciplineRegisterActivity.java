@@ -43,6 +43,24 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
         discListView.setText(finalList);
     }
 
+    // register a callback to launch SpecsActivity for a result
+    ActivityResultLauncher<Intent> specsResCallback = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult res) {
+                    if (res.getResultCode() != Activity.RESULT_OK) { return; }
+
+                    Bundle data = res.getData().getExtras();
+                    Discipline newDiscipline = (Discipline) data.get("discipline");
+                    registeredDisciplines.add(newDiscipline);
+
+                    refreshDisciplines();
+                    ((EditText) findViewById(R.id.reg_edit)).getText().clear();
+                }
+            }
+    );
+
     // button's function
     public void addDisciplineData() {
         // get text from edittext
@@ -56,23 +74,6 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // register a callback to launch SpecsActivity for a result
-        ActivityResultLauncher<Intent> specsResCallback = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult res) {
-                        if (res.getResultCode() != Activity.RESULT_OK) { return; }
-
-                        Bundle data = res.getData().getExtras();
-                        Discipline newDiscipline = (Discipline) data.get("discipline");
-                        registeredDisciplines.add(newDiscipline);
-
-                        refreshDisciplines();
-                    }
-                }
-        );
-
         // launch
         Intent specsIntent = new Intent(getApplicationContext(), DisciplineSpecificationsActivity.class);
         specsIntent.putExtra("disc name", discText);
@@ -84,10 +85,17 @@ public class DisciplineRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discipline_register);
 
+        Bundle data = getIntent().getExtras();
+
         final Button dataButton = findViewById(R.id.reg_button);
         dataButton.setOnClickListener(v -> addDisciplineData());
 
         final TextView discListView = findViewById(R.id.reg_list);
         discListView.setMovementMethod(new ScrollingMovementMethod());
+
+        final TextView nameView = findViewById(R.id.reg_welcome_first);
+        nameView.setText(data.getString("first name"));
+        final TextView surnameView = findViewById(R.id.reg_welcome_last);
+        surnameView.setText(data.getString("last name"));
     }
 }
